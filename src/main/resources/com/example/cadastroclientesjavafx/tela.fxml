@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="599.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cadastroclientesjavafx.TelaController">
+   <children>
+      <Label alignment="CENTER" layoutX="108.0" layoutY="22.0" text="Cadastro de clientes">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Label>
+      <Separator layoutX="-3.0" layoutY="91.0" prefHeight="0.0" prefWidth="600.0" />
+      <Label layoutX="168.0" layoutY="99.0" text="Informações sobre o cliente">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <VBox alignment="TOP_RIGHT" layoutX="81.0" layoutY="162.0" prefHeight="85.0" prefWidth="430.0" spacing="40.0">
+         <children>
+            <HBox prefHeight="8.0" prefWidth="430.0" spacing="37.0">
+               <children>
+                  <Label prefHeight="23.0" prefWidth="33.0" text="Nome" />
+                  <TextField fx:id="nomeTextField" alignment="TOP_LEFT" prefHeight="25.0" prefWidth="360.0" promptText="Nome do cliente" />
+               </children>
+            </HBox>
+            <HBox prefHeight="8.0" prefWidth="430.0" spacing="235.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="46.0" text="Telefone" />
+                  <TextField fx:id="telefoneTextField" promptText="(41)99999-9999" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Separator layoutX="-3.0" layoutY="288.0" prefHeight="0.0" prefWidth="600.0" />
+      <Label contentDisplay="CENTER" layoutX="254.0" layoutY="296.0" text="Endereço" textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <HBox layoutX="87.0" layoutY="341.0" prefHeight="25.0" prefWidth="430.0" spacing="95.0">
+         <children>
+            <Label prefHeight="23.0" prefWidth="21.0" text="CEP" />
+            <TextField fx:id="cepTextField" alignment="TOP_LEFT" prefHeight="25.0" prefWidth="153.0" promptText="99999-999" />
+            <Button fx:id="cepBuscarButton" mnemonicParsing="false" onAction="#buscarCep" text="Buscar">
+               <graphic>
+                  <FontAwesomeIconView glyphName="SEARCH" />
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <VBox alignment="TOP_RIGHT" layoutX="85.0" layoutY="392.0" prefHeight="95.0" prefWidth="430.0" spacing="5.0">
+         <children>
+            <HBox prefHeight="8.0" prefWidth="430.0" spacing="37.0">
+               <children>
+                  <Label prefHeight="23.0" prefWidth="33.0" text="Rua" />
+                  <TextField fx:id="ruaTextField" alignment="TOP_LEFT" prefHeight="25.0" prefWidth="360.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="8.0" prefWidth="430.0" spacing="25.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="46.0" text="Número" />
+                  <TextField fx:id="numeroTextField" prefHeight="25.0" prefWidth="96.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="8.0" prefWidth="430.0" spacing="25.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="46.0" text="Cidade" />
+                  <TextField fx:id="cidadeTextField" prefHeight="25.0" prefWidth="122.0" />
+                  <Label prefHeight="25.0" prefWidth="36.0" text="Estado" />
+                  <ChoiceBox fx:id="estadoChoiceBox" prefWidth="150.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Separator layoutY="503.0" prefHeight="0.0" prefWidth="600.0" />
+      <HBox layoutX="38.0" layoutY="532.0" prefHeight="45.0" prefWidth="238.0" spacing="30.0">
+         <children>
+            <Button accessibleText="Limpa todos os campos" cancelButton="true" mnemonicParsing="false" onAction="#limparCampos" text="Limpar">
+               <graphic>
+                  <FontAwesomeIconView fill="#ff2c00" glyphName="REMOVE" />
+               </graphic>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button accessibleText="Salva as informações do cliente" defaultButton="true" mnemonicParsing="false" onAction="#adicionarCliente" text="Salvar" textFill="#3c3838">
+               <graphic>
+                  <FontAwesomeIconView fill="#007bff" glyphName="SAVE" size="20">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </FontAwesomeIconView>
+               </graphic>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <Button accessibleText="Visualizar os cadastros" layoutX="363.0" layoutY="529.0" mnemonicParsing="false" onAction="#listarCadastros" prefHeight="44.0" prefWidth="191.0" text="Ver cadastros" textFill="#3c3838">
+         <graphic>
+            <FontAwesomeIconView glyphName="EYE" size="20">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </FontAwesomeIconView>
+         </graphic>
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Separator layoutX="301.0" layoutY="504.0" orientation="VERTICAL" prefHeight="98.0" prefWidth="5.0" />
+   </children>
+</AnchorPane>
