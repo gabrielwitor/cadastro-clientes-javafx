@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cadastroclientesjavafx.TelaClientesController">
+
+<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cadastroclientesjavafx.TelaClientesController">
    <children>
-      <ListView fx:id="clientesListView" layoutX="13.0" layoutY="14.0" prefHeight="272.0" prefWidth="574.0" />
+      <TableView fx:id="clientesTableView" prefHeight="300.0" prefWidth="800.0">
+         <columns>
+            <TableColumn fx:id="idColumn" editable="false" prefWidth="37.0" sortable="false" text="id" />
+            <TableColumn fx:id="nomeColumn" editable="false" prefWidth="113.0" sortable="false" text="Nome" />
+            <TableColumn fx:id="telefoneColumn" editable="false" prefWidth="75.0" sortable="false" text="Telefone" />
+            <TableColumn fx:id="cepColumn" editable="false" prefWidth="84.0" sortable="false" text="CEP" />
+            <TableColumn fx:id="ruaColumn" editable="false" prefWidth="213.0" sortable="false" text="Rua" />
+            <TableColumn fx:id="numeroColumn" editable="false" prefWidth="67.0" sortable="false" text="Numero" />
+            <TableColumn fx:id="cidadeColumn" editable="false" prefWidth="149.0" sortable="false" text="Cidade" />
+            <TableColumn fx:id="estadoColumn" editable="false" prefWidth="61.0" sortable="false" text="Estado" />
+         </columns>
+      </TableView>
    </children>
 </AnchorPane>

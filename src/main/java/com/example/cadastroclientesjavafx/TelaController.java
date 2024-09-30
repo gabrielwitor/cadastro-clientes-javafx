@@ -1,5 +1,8 @@
 package com.example.cadastroclientesjavafx;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableArray;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,7 +18,8 @@ public class TelaController {
 
     Endereco endereco;
     Buscador buscador;
-    ArrayList<Cliente> clientes;
+
+    ObservableList<Cliente> clientes;
 
     Alert alert;
 
@@ -46,7 +50,7 @@ public class TelaController {
 
         estadoChoiceBox.getItems().addAll(buscador.estados);
 
-        clientes = new ArrayList<Cliente>();
+        clientes = FXCollections.observableArrayList(); // Inicializando a lista de clientes
     }
 
     @FXML
